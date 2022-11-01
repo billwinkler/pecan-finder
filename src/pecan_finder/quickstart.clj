@@ -165,13 +165,16 @@
         (let [img (last (map mapper annotations))]
           (if img 
             (img/show img)
-            (println "no objects found")))))))
+            (println "no objects found"))
+          img)))))
 
 (comment
   ;; annotate an image
   (def response (annotate-image-as-maps file-name))
   (def response (annotate-image-with-crop-hints file-name))
   (def response (annotate-image-with-obj-localization file-name))
+
+  (ImageIO/write (first img) "jpg" (io/file "./resources/annotated.jpg"))
 
   ;; enable the knowledge graph api before using
   ;;https://kgsearch.googleapis.com/v1/entities:search?ids=kg:/m/01q0j8&key=AIzaSyB_UygaPb3BgQSfRczlvdYxJcgOPTPUj3w
