@@ -1,14 +1,43 @@
 # pecan-finder
 
-A Clojure library designed to ... well, that part is up to you.
+A test of the Google Cloud Vision object localizer API to
+see if it might be able to detect pecans.
 
-## Usage
+![](resources/images/20200901_120343.JPG)
 
-FIXME
+See <https://cloud.google.com/vision/docs/object-localizer>
+
+## Install
+Add the following dependency to your `project.clj` file:
+
+    [pecan-finder "0.1.0-SNAPSHOT"]
+
+## Credentials
+
+Follow link to set up credentials, billing, etc...
+
+<https://cloud.google.com/vision/docs/setup>
+
+You'll need credentials to make api calls. These can be specified via
+an environment variable where `[PATH]` is the path to the json
+credentials for a particular google project.  This is the project
+where any charges will be accounted for.
+
+``` shell
+export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
+```
+
+Note, in MACOS, the export command needs to be invoked from zsh.
+Place the `export` command in a `~/.zshenv`.  Invoke using `source`.
+
+``` shell
+source ~/.zshenv
+```
+
 
 ## License
 
-Copyright © 2022 FIXME
+Copyright © 2022 Bill Winkler
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
