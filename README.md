@@ -27,11 +27,20 @@ where any charges will be accounted for.
 export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 ```
 
-Note, in MACOS, the export command needs to be invoked from zsh.
+Note, in MacOS, the export command needs to be invoked from zsh.
 Place the `export` command in a `~/.zshenv`.  Invoke using `source`.
 
 ``` shell
 source ~/.zshenv
+```
+
+## Usage
+
+``` clojure
+(annotate-image-as-maps "20200901_120343.JPG")
+(annotate-image-with-crop-hints "20200901_120343.JPG")
+(annotate-image-with-obj-localization "20200901_120343.JPG")
+
 ```
 
 
