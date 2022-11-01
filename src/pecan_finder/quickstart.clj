@@ -177,10 +177,10 @@
   (ImageIO/write (first img) "jpg" (io/file "./resources/annotated.jpg"))
 
   ;; enable the knowledge graph api before using
-  ;;https://kgsearch.googleapis.com/v1/entities:search?ids=kg:/m/01q0j8&key=AIzaSyB_UygaPb3BgQSfRczlvdYxJcgOPTPUj3w
+  ;;https://kgsearch.googleapis.com/v1/entities:search?ids=kg:/m/01q0j8&key=[API-KEY]
 
   ;; example "mixture"
-  ;;https://kgsearch.googleapis.com/v1/entities:search?ids=/m/01q0j8&key=AIzaSyB_UygaPb3BgQSfRczlvdYxJcgOPTPUj3w
+  ;;https://kgsearch.googleapis.com/v1/entities:search?ids=/m/01q0j8&key=[API-KEY]
 
   )
 
