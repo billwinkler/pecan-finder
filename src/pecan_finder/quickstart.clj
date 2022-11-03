@@ -144,7 +144,7 @@
 
 (defn annotate-image-with-obj-localization
   "Submit the image annotation request"
-  [filename]
+  [filename & {:keys [show] :or {show false}}]
   (let [image (img/as-image filename)
         request (build-request filename :obj-localization)
         requests (doto (new ArrayList) (.add request))
@@ -154,7 +154,10 @@
       (let [entities  (.getLocalizedObjectAnnotationsList resp)
             mapper (fn [ann] (let [vertz (:vertices ann)
                                     {:keys [x y w h]} (normalized-verts-as-rect image vertz)]
-                                (img/annotate-image! image x y w h (:name ann))))
+                               {:img (img/annotate-image! image x y w h (:name ann))
+                                :label (:name ann)
+                                :x (int x) :y (int y)
+                                :w (int w) :h (int h)}))
             annotations (for [entity entities]
                           (let [verts (for [v (-> entity .getBoundingPoly .getNormalizedVerticesList)]
                                         {:x (.getX v) :y (.getY v)})
@@ -167,12 +170,16 @@
                              :vertices verts}))]
         
         ;;(img/show image)
-        (let [img (last (map mapper annotations))]
+        (let [results (map mapper annotations)
+              img (-> results last :img)]
           (if img
             (do
-              (img/show img filename)
-              (save img filename))
-            (println "no objects found")))))))
+              (when show (img/show img filename))
+              (save img filename)
+              {:file filename
+               :objs (mapv #(dissoc % :img) results)})
+            {:file filename
+             :objs []}))))))
 
 (comment
   ;; annotate an image

@@ -29,6 +29,6 @@
 
 (defn annotate-images!
   "Map image annotation over the images in `resources/images`"
-  []
-  (map annotate-image-with-obj-localization (resource-images)))
+  [& {:keys [show] :or {show false}}]
+  (mapv #(annotate-image-with-obj-localization % :show show) (resource-images)))
 
