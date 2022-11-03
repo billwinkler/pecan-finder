@@ -3,7 +3,7 @@
 A test of the Google Cloud Vision object localizer API to
 see if it might be able to detect pecans.
 
-![](results/20200901_120343.JPG)
+![](results/20200901_120344.JPG)
 
 See <https://cloud.google.com/vision/docs/object-localizer>
 
