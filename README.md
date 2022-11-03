@@ -43,6 +43,25 @@ source ~/.zshenv
 
 ```
 
+## Annotation Test Results
+
+About half of the pecans (52%) were annotated as something.  Of those annotations, 98% were labeled as "Animal".  But other things, like leaves, sticks and branches were also identified as being "Animal[s]".  About one third of the objects annotated as "Animal" were pecans.
+
+| Metric  | Value   |
+|:--|:--|
+| Number of Images  | 129  |
+| Out of Focus Images  | 19  |
+| Total Pecans  | 244 |
+| % of Pecans Annotated as Something | 52%  |
+| Number of Annotated Objects  | 418  |
+| % of Annotated Pecans Identified as Animals  | 98%  |
+| Number of Objects Annotated as Animals  | 380  |
+| % of Animal Annotations that were Pecans  | 34%  |
+| % of Animal Annotations that were Leaves  | 50%  |
+| % of Annotated Objects Identified as Animals  | 91%  |
+
+The [test result spreadsheet](https://docs.google.com/spreadsheets/d/1QuZcuINqm1jCDHDSkN5jG_lq2Fb-UZ7Krf5aHFIc5yc/edit?usp=sharing).
+
 
 ## License
 
