@@ -137,6 +137,11 @@
   (let [{:keys [x y w h]} (normalized-verts-as-rect image vertices)]
     (-> image (img/sub-image x y w h) (img/show label))))
 
+(defn- save
+  "Save an annotated image to the results directory"
+  [img outfile]
+  (ImageIO/write img "jpg" (io/file (str "./results/" outfile))))
+
 (defn annotate-image-with-obj-localization
   "Submit the image annotation request"
   [filename]
@@ -163,10 +168,11 @@
         
         ;;(img/show image)
         (let [img (last (map mapper annotations))]
-          (if img 
-            (img/show img)
-            (println "no objects found"))
-          img)))))
+          (if img
+            (do
+              (img/show img filename)
+              (save img filename))
+            (println "no objects found")))))))
 
 (comment
   ;; annotate an image
