@@ -121,12 +121,12 @@ About half of the pecans (52%) were annotated as something.  Of those annotation
 | Out of Focus Images  | 19  |
 | Total Pecans  | 244 |
 | % of Pecans Annotated as Something | 56%  |
-| # of Pecans Annotated two different types | 6  |
+| # of Pecans Annotated as Two Different Types | 6  |
 | Number of Annotated Objects  | 418  |
 | % "Animal" as Pecan Annotation  | 93%  |
 | Number of Objects Annotated as Animals  | 380  |
-| % of Animal Annotations that were Pecans  | 34%  |
-| % of Animal Annotations that were Leaves  | 50%  |
+| % of Animal Annotations That Were Pecans  | 34%  |
+| % of Animal Annotations That Were Leaves  | 50%  |
 | % of Annotated Objects Identified as Animals  | 91%  |
 
 The [test result spreadsheet](https://docs.google.com/spreadsheets/d/1QuZcuINqm1jCDHDSkN5jG_lq2Fb-UZ7Krf5aHFIc5yc/edit?usp=sharing).
